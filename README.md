@@ -8,6 +8,7 @@
 ```
 
 ## Additional Packages to install other than DotNET SDK:
+To Handle Data Validations for a DTO:
 ```
   dotnet add package MinimalApis.Extensions --version 0.11.0
 ```
