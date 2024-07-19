@@ -1,0 +1,33 @@
+GET http://localhost:5235/items
+
+###
+GET http://localhost:5235/items/1
+
+
+###
+POST http://localhost:5235/items/
+Content-Type: application/json
+
+{
+    "Name": "Final Fantasy XIV",
+    "Type": "Game",
+    "Description": "Final Fantasy XIV Game Desceiption",
+    "Price": 20,
+    "ReleaseDate": "2010-09-30"
+}
+
+###
+PUT http://localhost:5235/items/5
+Content-Type: application/json
+
+{
+    "name": "Call of Duty",
+    "type": "Game (Editted)",
+    "description": "Call of Duty Game Desceiption (Editted)",
+    "price": 10,
+    "releaseDate": "2010-09-30"
+}
+
+
+###
+DELETE http://localhost:5235/items/3
