@@ -10,11 +10,12 @@ Content-Type: application/json
 
 {
     "Name": "Final Fantasy XIV",
-    "Type": "Game",
+    "Type": 1, 
     "Description": "Final Fantasy XIV Game Desceiption",
     "Price": 20,
     "ReleaseDate": "2010-09-30"
 }
+ //first we sent type asa a string now we send Id of it
 
 ###
 PUT http://localhost:5235/items/5

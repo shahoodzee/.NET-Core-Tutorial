@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Amir Rashid Wayn\\repos\\.NET Core Project\\.NET Core Project\\MyStore.Api\\MyStore.Api.csproj": {}
+    "S:\\repos\\Items Store (.NET Core)\\.NET-Core-Tutorial\\MyStore.Api\\MyStore.Api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Amir Rashid Wayn\\repos\\.NET Core Project\\.NET Core Project\\MyStore.Api\\MyStore.Api.csproj": {
+    "S:\\repos\\Items Store (.NET Core)\\.NET-Core-Tutorial\\MyStore.Api\\MyStore.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Amir Rashid Wayn\\repos\\.NET Core Project\\.NET Core Project\\MyStore.Api\\MyStore.Api.csproj",
+        "projectUniqueName": "S:\\repos\\Items Store (.NET Core)\\.NET-Core-Tutorial\\MyStore.Api\\MyStore.Api.csproj",
         "projectName": "MyStore.Api",
-        "projectPath": "C:\\Users\\Amir Rashid Wayn\\repos\\.NET Core Project\\.NET Core Project\\MyStore.Api\\MyStore.Api.csproj",
-        "packagesPath": "C:\\Users\\Amir Rashid Wayn\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Amir Rashid Wayn\\repos\\.NET Core Project\\.NET Core Project\\MyStore.Api\\obj\\",
+        "projectPath": "S:\\repos\\Items Store (.NET Core)\\.NET-Core-Tutorial\\MyStore.Api\\MyStore.Api.csproj",
+        "packagesPath": "C:\\Users\\intel\\.nuget\\packages\\",
+        "outputPath": "S:\\repos\\Items Store (.NET Core)\\.NET-Core-Tutorial\\MyStore.Api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Amir Rashid Wayn\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\intel\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -43,6 +43,16 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.0-preview.6.24327.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[9.0.0-preview.6.24327.4, )"
+            },
             "MinimalApis.Extensions": {
               "target": "Package",
               "version": "[0.11.0, )"
