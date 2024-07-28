@@ -17,6 +17,4 @@ To Connect Any Database with the project (I am using MongoDB)
 dotnet add package MongoDB.EntityFrameworkCore --version 8.0.3
 ```
 Checkout these packages @ [NuGet Packages](https://www.nuget.org/packages/MongoDB.EntityFrameworkCore)
-
-`rgb(9, 105, 218)`
   

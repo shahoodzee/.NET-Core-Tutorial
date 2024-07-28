@@ -1,5 +1,6 @@
 ﻿namespace MyStore.Api.Endpoints;
 
+using Microsoft.EntityFrameworkCore;
 using MyStore.Api.Data;
 using MyStore.Api.Dtos;
 using MyStore.Api.Entities;
@@ -42,8 +43,7 @@ public static class ItemsEndpoints
         //since all the routes are for the item resource we can hardcode the route like this:
         var group = app.MapGroup("items");
         
-        group.MapGet("/", () => items);
-
+        // group.MapGet("/", () => items);
         group.MapGet("/{id}", (int id, MyStoreContext dbContext) => {
             //ItemDto? item = items.Find(item => item.Id == id); b4 using Dbcontext
             Item? item = dbContext.Items.Find(id);
@@ -101,6 +101,7 @@ public static class ItemsEndpoints
         }).WithParameterValidation();
         //this function from the MinimalApi.Extensions package works the same as (ModelState.Isvalid ?) in ASP.NET
 
+        /**
         group.MapPut("/{id}", (int id, UpdateItemDto updateItem) => {
             var index = items.FindIndex(item => item.Id == id);
 
@@ -118,9 +119,39 @@ public static class ItemsEndpoints
             );
             return Results.NoContent();
         });
+        **/
+        // New Put method using db context and mapping
+        group.MapPut("/{id}", async (int id, UpdateItemDto updateItem, MyStoreContext dbContext) =>
+        {
+            var existingGame = await dbContext.Items.FindAsync(id);
 
+            if (existingGame is null)
+            {
+                return Results.NotFound();
+            }
+
+            dbContext.Entry(existingGame)
+                     .CurrentValues
+                     .SetValues(updateItem.ToEntity(id));
+
+            await dbContext.SaveChangesAsync();
+
+            return Results.NoContent();
+        });
+
+        /**
         group.MapDelete("/{id}", (int id) => {
             items.RemoveAll(item => item.Id == id);
+            return Results.NoContent();
+        });
+        **/
+        //using Db context and EF core to delete as record
+        group.MapDelete("/{id}", async (int id, MyStoreContext dbContext) =>
+        {
+            await dbContext.Items
+                     .Where(game => game.Id == id)
+                     .ExecuteDeleteAsync();
+
             return Results.NoContent();
         });
 

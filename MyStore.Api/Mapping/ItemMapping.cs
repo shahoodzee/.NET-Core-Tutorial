@@ -17,6 +17,19 @@ public static class GameMapping
         };
     }
 
+    public static Item ToEntity(this UpdateItemDto item, int id)
+    {
+        return new Item()
+        {
+            Id = id,
+            Name = item.Name,
+            ItemTypeId = item.ItemTypeId,
+            Price = item.Price,
+            Description = item.Description, 
+            ReleaseDate = item.ReleaseDate
+        };
+    }  
+
     public static ItemSummaryDto ToItemSummaryDto(this Item item)
     {
         return new
